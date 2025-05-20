@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=3 uid="uid://byp6vrivog6m5"]
+
+[ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_e2rtc"]
+[ext_resource type="Script" uid="uid://cqrrqrvgack2" path="res://scenes/gameplay/Gameplay.gd" id="2_hhfdu"]
+[ext_resource type="PackedScene" uid="uid://cfqkp86vugmtj" path="res://scenes/gameplay/Player.tscn" id="3_1l7o1"]
+[ext_resource type="Texture2D" uid="uid://tthf0rklom7" path="res://assets/graphics/reloj de tiempo.png" id="4_ytj2m"]
+[ext_resource type="Texture2D" uid="uid://2u8qtgtcp31o" path="res://assets/graphics/boton blanco.png" id="5_jfjcr"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("2_hhfdu")
+
+[node name="TextureRectFondo" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -676.0
+offset_right = 1507.0
+offset_bottom = 980.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e2rtc")
+
+[node name="Player" parent="." instance=ExtResource("3_1l7o1")]
+position = Vector2(530, 317)
+
+[node name="NodeObstaculos" type="Node2D" parent="."]
+
+[node name="NodeCaritas" type="Node2D" parent="."]
+
+[node name="TimerObstaculos" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="TimerCaritas" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="TimerJuego" type="Timer" parent="."]
+wait_time = 180.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayerUI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainerInfo" type="Control" parent="CanvasLayerUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -3.0
+offset_right = 46055.0
+offset_bottom = 4833.0
+scale = Vector2(0.0244927, 0.0244927)
+
+[node name="TextureRectIconoReloj" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 2
+offset_left = 82.0
+offset_right = 3960.0
+offset_bottom = 3062.0
+texture = ExtResource("4_ytj2m")
+
+[node name="LabelTiempo" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 2
+offset_left = 3592.91
+offset_top = 449.114
+offset_right = 8365.91
+offset_bottom = 2429.11
+text = "Tiempo: 03:00"
+
+[node name="LabelPuntaje" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 2
+offset_left = 42135.0
+offset_top = 775.742
+offset_right = 45728.0
+offset_bottom = 2411.74
+text = "Puntaje: 0"
+
+[node name="Node2DLateralIzquierdo" type="Node2D" parent="."]
+
+[node name="CirculoBlancoL1" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(64, 78.2381)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL2" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(64, 174.238)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL3" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(64, 262.238)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL4" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(64, 350.238)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL5" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(64, 438.238)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL6" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(62, 528.238)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL7" type="Sprite2D" parent="Node2DLateralIzquierdo"]
+position = Vector2(64, 600)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="Node2DLateralDerecho" type="Node2D" parent="."]
+
+[node name="CirculoBlancoL1" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 80)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL2" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 160)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL3" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 256)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL4" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 344)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL5" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 432)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL6" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 528)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")
+
+[node name="CirculoBlancoL7" type="Sprite2D" parent="Node2DLateralDerecho"]
+position = Vector2(1088, 600)
+scale = Vector2(-0.0399974, -0.0399974)
+texture = ExtResource("5_jfjcr")

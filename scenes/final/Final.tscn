@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://clcu4667vbrqd"]
+
+[ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_tmyah"]
+[ext_resource type="Script" uid="uid://cfxmhh5j5xxe1" path="res://scenes/final/Final.gd" id="2_ocyog"]
+[ext_resource type="Texture2D" uid="uid://tgcy3qtd3qe2" path="res://assets/graphics/flecha izquierda.png" id="3_4qh0i"]
+[ext_resource type="Texture2D" uid="uid://8ittq5wwd66a" path="res://assets/graphics/sigamos jugando.png" id="3_n66j5"]
+[ext_resource type="Texture2D" uid="uid://dyfyt0imdif24" path="res://assets/graphics/flecha derecha.png" id="4_fgjv1"]
+[ext_resource type="Texture2D" uid="uid://2u8qtgtcp31o" path="res://assets/graphics/boton blanco.png" id="6_vul3y"]
+[ext_resource type="Texture2D" uid="uid://blwhwrrn4is7v" path="res://assets/graphics/mmm parece que no acertaste.png" id="7_rb6lc"]
+[ext_resource type="Texture2D" uid="uid://ctxvrqpwntxmn" path="res://assets/graphics/como estabas tan.png" id="8_1nxq7"]
+[ext_resource type="Texture2D" uid="uid://vtooc2pk7raa" path="res://assets/graphics/esto que acabas de.png" id="9_wauwu"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_ocyog")
+
+[node name="TextureRectFondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tmyah")
+
+[node name="VBoxContainerPrincipal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 95.0
+scale = Vector2(1, 6.84)
+
+[node name="PanelPregunta" type="Control" parent="VBoxContainerPrincipal"]
+visible = false
+anchors_preset = 0
+offset_top = -3.0
+offset_right = 1155.0
+offset_bottom = 93.0
+
+[node name="LabelPregunta" type="TextureRect" parent="VBoxContainerPrincipal/PanelPregunta"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 3.2924
+offset_right = 362.0
+offset_bottom = 104.292
+scale = Vector2(0.573271, 0.0629406)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_n66j5")
+
+[node name="TextureRectBarraConteo" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta"]
+layout_mode = 2
+offset_right = 1155.0
+offset_bottom = 96.0
+
+[node name="HBoxConteoNumeros" type="Control" parent="VBoxContainerPrincipal/PanelPregunta"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 96.0
+
+[node name="ButtonMenos" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta/HBoxConteoNumeros"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 30.924
+offset_right = 2251.0
+offset_bottom = 1542.92
+scale = Vector2(0.336811, 0.0466859)
+texture_normal = ExtResource("3_4qh0i")
+
+[node name="LabelNumeroReportado" type="Label" parent="VBoxContainerPrincipal/PanelPregunta/HBoxConteoNumeros"]
+layout_mode = 2
+offset_left = 323.0
+offset_top = 52.4152
+offset_right = 516.0
+offset_bottom = 75.4152
+scale = Vector2(2.81239, 1.17812)
+text = "1"
+horizontal_alignment = 1
+justification_flags = 0
+
+[node name="ButtonMas" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta/HBoxConteoNumeros"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 40.8655
+offset_right = 2277.0
+offset_bottom = 1552.87
+scale = Vector2(0.31397, 0.0359762)
+texture_normal = ExtResource("4_fgjv1")
+
+[node name="LabelSigamos" type="TextureRect" parent="VBoxContainerPrincipal/PanelPregunta"]
+layout_mode = 2
+offset_left = -3.0
+offset_top = 5.04678
+offset_right = 1152.0
+offset_bottom = 101.047
+
+[node name="ButtonContinuarQuiz" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 77.5614
+offset_right = 2471.0
+offset_bottom = 1589.56
+scale = Vector2(0.11224, 0.0110989)
+texture_normal = ExtResource("6_vul3y")
+
+[node name="PanelResultado" type="Control" parent="VBoxContainerPrincipal"]
+anchors_preset = 0
+offset_right = 2000.0
+offset_bottom = 1512.0
+
+[node name="TextureRectMensajeResultado1" type="TextureRect" parent="VBoxContainerPrincipal/PanelResultado"]
+visible = false
+layout_mode = 2
+offset_left = 198.0
+offset_top = -0.438597
+offset_right = 2198.0
+offset_bottom = 1511.56
+scale = Vector2(0.3377, 0.0639579)
+texture = ExtResource("7_rb6lc")
+
+[node name="TextureRectMensajeResultado2" type="TextureRect" parent="VBoxContainerPrincipal/PanelResultado"]
+visible = false
+layout_mode = 2
+offset_right = 2000.0
+offset_bottom = 1512.0
+scale = Vector2(0.580592, 0.0650514)
+texture = ExtResource("8_1nxq7")
+
+[node name="TextureRectMensajeResultado3" type="TextureRect" parent="VBoxContainerPrincipal/PanelResultado"]
+layout_mode = 2
+offset_left = 37.0
+offset_top = -0.877193
+offset_right = 2037.0
+offset_bottom = 1511.12
+scale = Vector2(0.545574, 0.0628505)
+texture = ExtResource("9_wauwu")
+
+[node name="ButtonReiniciar" type="TextureButton" parent="VBoxContainerPrincipal/PanelResultado"]
+layout_mode = 2
+offset_left = 439.0
+offset_top = 71.7836
+offset_right = 2439.0
+offset_bottom = 1583.78
+scale = Vector2(0.0986976, 0.012109)
+texture_normal = ExtResource("6_vul3y")
+
+[node name="TimerMensajes" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

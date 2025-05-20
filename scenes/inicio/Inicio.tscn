@@ -1,0 +1,173 @@
+[gd_scene load_steps=14 format=3 uid="uid://drib62ut2dw31"]
+
+[ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_lfkr5"]
+[ext_resource type="Script" uid="uid://btoa68goe3v3o" path="res://scenes/inicio/Inicio.gd" id="1_qbkfo"]
+[ext_resource type="Texture2D" uid="uid://c8mnv2lknxue5" path="res://assets/graphics/inicio y reinicio del juego primera pagina.png" id="2_qas3a"]
+[ext_resource type="Texture2D" uid="uid://cl44vft647qaw" path="res://assets/graphics/texto inicio del juego titila.png" id="3_ea6f7"]
+[ext_resource type="Texture2D" uid="uid://de6omiiq7in7v" path="res://assets/graphics/vamos a jugar.png" id="5_q6its"]
+[ext_resource type="Texture2D" uid="uid://dyfyt0imdif24" path="res://assets/graphics/flecha derecha.png" id="6_btuh2"]
+[ext_resource type="Texture2D" uid="uid://dhkb5kxslp3fn" path="res://assets/graphics/usa la flecha.png" id="7_1gr4y"]
+[ext_resource type="Texture2D" uid="uid://bwv0vsbmov2vu" path="res://assets/graphics/mano presionando.png" id="8_qah25"]
+[ext_resource type="Texture2D" uid="uid://s4rn7ubrodhm" path="res://assets/graphics/usa las flecha.png" id="8_rwlf0"]
+[ext_resource type="Texture2D" uid="uid://tgcy3qtd3qe2" path="res://assets/graphics/flecha izquierda.png" id="9_d17nt"]
+[ext_resource type="Texture2D" uid="uid://1ghi1di6511c" path="res://assets/graphics/el juego empezara.png" id="10_pjmwy"]
+[ext_resource type="Texture2D" uid="uid://c1e00w7cbeyhm" path="res://assets/graphics/conteo 3.png" id="11_qah25"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjmwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qah25")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qah25")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qbkfo")
+
+[node name="TextureRectFondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1512.0
+texture = ExtResource("1_lfkr5")
+
+[node name="PanelTitulo" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_right = 2165.0
+offset_bottom = 1512.0
+scale = Vector2(0.426033, 0.426033)
+
+[node name="TextureRectTitulo" type="TextureRect" parent="PanelTitulo"]
+layout_mode = 2
+texture = ExtResource("3_ea6f7")
+
+[node name="ButtonEmpezar" type="TextureButton" parent="PanelTitulo"]
+layout_mode = 2
+texture_normal = ExtResource("2_qas3a")
+stretch_mode = 0
+
+[node name="PanelTutorialPag2" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="TextureRectTextoPag2" type="TextureRect" parent="PanelTutorialPag2"]
+layout_mode = 2
+offset_left = 131.0
+offset_right = 2131.0
+offset_bottom = 1512.0
+scale = Vector2(0.432737, 0.432737)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("5_q6its")
+
+[node name="ButtonContinuarPag2" type="TextureButton" parent="PanelTutorialPag2"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 289.0
+offset_right = 2254.0
+offset_bottom = 1801.0
+scale = Vector2(0.289035, 0.289035)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("6_btuh2")
+
+[node name="PanelTutorialPag3" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 2000.0
+offset_bottom = 1512.0
+scale = Vector2(0.430514, 0.430514)
+
+[node name="TextureRectTextoPag3" type="TextureRect" parent="PanelTutorialPag3"]
+layout_mode = 2
+offset_right = 2000.0
+offset_bottom = 1512.0
+texture = ExtResource("7_1gr4y")
+
+[node name="AnimatedSprite2DManoDer" type="AnimatedSprite2D" parent="PanelTutorialPag3"]
+position = Vector2(924.477, 903.571)
+scale = Vector2(0.332376, 0.332376)
+sprite_frames = SubResource("SpriteFrames_pjmwy")
+frame_progress = 0.514381
+
+[node name="ButtonContinuarPag3" type="TextureButton" parent="PanelTutorialPag3"]
+layout_mode = 2
+offset_left = 318.224
+offset_top = 708.456
+offset_right = 2318.22
+offset_bottom = 2220.46
+scale = Vector2(0.613669, 0.613669)
+texture_normal = ExtResource("6_btuh2")
+
+[node name="PanelTutorialPag4" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 151.0
+offset_top = -3.0
+offset_right = 2151.0
+offset_bottom = 1509.0
+scale = Vector2(0.431024, 0.431024)
+
+[node name="TextureRectTextoPag4" type="TextureRect" parent="PanelTutorialPag4"]
+layout_mode = 2
+offset_right = 2000.0
+offset_bottom = 1512.0
+texture = ExtResource("8_rwlf0")
+
+[node name="AnimatedSprite2DManoIzq" type="AnimatedSprite2D" parent="PanelTutorialPag4"]
+position = Vector2(510.412, 823.62)
+scale = Vector2(0.332376, 0.332376)
+sprite_frames = SubResource("SpriteFrames_pjmwy")
+frame_progress = 0.514381
+
+[node name="ButtonContinuarPag4" type="TextureButton" parent="PanelTutorialPag4"]
+layout_mode = 2
+offset_left = 403.69
+offset_top = 628.735
+offset_right = 2403.69
+offset_bottom = 2140.74
+scale = Vector2(0.655558, 0.655558)
+texture_normal = ExtResource("9_d17nt")
+
+[node name="PanelCuentaRegresiva" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 153.0
+offset_top = -5.0
+offset_right = 2153.0
+offset_bottom = 1507.0
+scale = Vector2(0.430355, 0.430355)
+
+[node name="TextureRectTextoEmpezara" type="TextureRect" parent="PanelCuentaRegresiva"]
+layout_mode = 2
+offset_left = 11.6183
+offset_top = -295.105
+offset_right = 2011.62
+offset_bottom = 1216.89
+texture = ExtResource("10_pjmwy")
+
+[node name="TextureRectNumeroConteo" type="TextureRect" parent="PanelCuentaRegresiva"]
+layout_mode = 2
+offset_right = 2000.0
+offset_bottom = 1512.0
+texture = ExtResource("11_qah25")
+
+[node name="TimerConteo" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

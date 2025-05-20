@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvy4j65urokaq"]
+
+[ext_resource type="Texture2D" uid="uid://cqjcytmrokhsb" path="res://assets/graphics/carita feliz.png" id="1_rgga8"]
+[ext_resource type="Script" uid="uid://77y3l7wmvfrk" path="res://scenes/gameplay/Carita.gd" id="2_1kbxk"]
+
+[node name="Carita" type="Sprite2D"]
+position = Vector2(-833.333, 630)
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("1_rgga8")
+script = ExtResource("2_1kbxk")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
