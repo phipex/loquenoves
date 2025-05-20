@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://clcu4667vbrqd"]
+[gd_scene load_steps=13 format=3 uid="uid://clcu4667vbrqd"]
 
 [ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_tmyah"]
 [ext_resource type="Script" uid="uid://cfxmhh5j5xxe1" path="res://scenes/final/Final.gd" id="2_ocyog"]
 [ext_resource type="Texture2D" uid="uid://tgcy3qtd3qe2" path="res://assets/graphics/flecha izquierda.png" id="3_4qh0i"]
 [ext_resource type="Texture2D" uid="uid://8ittq5wwd66a" path="res://assets/graphics/sigamos jugando.png" id="3_n66j5"]
 [ext_resource type="Texture2D" uid="uid://dyfyt0imdif24" path="res://assets/graphics/flecha derecha.png" id="4_fgjv1"]
+[ext_resource type="Shortcut" uid="uid://bfiw12hjqgm4c" path="res://W-izq.tres" id="4_tnuqv"]
+[ext_resource type="Shortcut" uid="uid://dph1lh28dwcah" path="res://7-der.tres" id="6_uhsug"]
 [ext_resource type="Texture2D" uid="uid://2u8qtgtcp31o" path="res://assets/graphics/boton blanco.png" id="6_vul3y"]
 [ext_resource type="Texture2D" uid="uid://blwhwrrn4is7v" path="res://assets/graphics/mmm parece que no acertaste.png" id="7_rb6lc"]
 [ext_resource type="Texture2D" uid="uid://ctxvrqpwntxmn" path="res://assets/graphics/como estabas tan.png" id="8_1nxq7"]
+[ext_resource type="Shortcut" uid="uid://ba1mejdgr0o6x" path="res://P-centro.tres" id="8_yixgo"]
 [ext_resource type="Texture2D" uid="uid://vtooc2pk7raa" path="res://assets/graphics/esto que acabas de.png" id="9_wauwu"]
 
 [node name="Final" type="Control"]
@@ -28,7 +31,6 @@ offset_bottom = 95.0
 scale = Vector2(1, 6.84)
 
 [node name="PanelPregunta" type="Control" parent="VBoxContainerPrincipal"]
-visible = false
 anchors_preset = 0
 offset_top = -3.0
 offset_right = 1155.0
@@ -63,6 +65,7 @@ offset_top = 30.924
 offset_right = 2251.0
 offset_bottom = 1542.92
 scale = Vector2(0.336811, 0.0466859)
+shortcut = ExtResource("4_tnuqv")
 texture_normal = ExtResource("3_4qh0i")
 
 [node name="LabelNumeroReportado" type="Label" parent="VBoxContainerPrincipal/PanelPregunta/HBoxConteoNumeros"]
@@ -83,6 +86,7 @@ offset_top = 40.8655
 offset_right = 2277.0
 offset_bottom = 1552.87
 scale = Vector2(0.31397, 0.0359762)
+shortcut = ExtResource("6_uhsug")
 texture_normal = ExtResource("4_fgjv1")
 
 [node name="LabelSigamos" type="TextureRect" parent="VBoxContainerPrincipal/PanelPregunta"]
@@ -99,9 +103,11 @@ offset_top = 77.5614
 offset_right = 2471.0
 offset_bottom = 1589.56
 scale = Vector2(0.11224, 0.0110989)
+shortcut = ExtResource("8_yixgo")
 texture_normal = ExtResource("6_vul3y")
 
 [node name="PanelResultado" type="Control" parent="VBoxContainerPrincipal"]
+visible = false
 anchors_preset = 0
 offset_right = 2000.0
 offset_bottom = 1512.0

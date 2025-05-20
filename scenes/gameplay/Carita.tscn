@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://77y3l7wmvfrk" path="res://scenes/gameplay/Carita.gd" id="2_1kbxk"]
 
 [node name="Carita" type="Sprite2D"]
-position = Vector2(-833.333, 630)
-scale = Vector2(0.166667, 0.166667)
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(0.0671366, 0.078915)
 texture = ExtResource("1_rgga8")
 script = ExtResource("2_1kbxk")
 

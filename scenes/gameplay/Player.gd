@@ -20,9 +20,9 @@ func _ready():
 
 func _physics_process(delta: float):
 	var direction: float = 0.0
-	if Input.is_action_pressed("ui_left"): # "ui_left" está mapeado a la flecha izquierda por defecto
+	if Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_W): # "ui_left" está mapeado a la flecha izquierda por defecto
 		direction = -1.0
-	if Input.is_action_pressed("ui_right"): # "ui_right" está mapeado a la flecha derecha por defecto
+	if Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_7): # "ui_right" está mapeado a la flecha derecha por defecto
 		direction = 1.0
 
 	velocity.x = direction * speed

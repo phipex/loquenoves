@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://byp6vrivog6m5"]
+[gd_scene load_steps=8 format=3 uid="uid://byp6vrivog6m5"]
 
 [ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_e2rtc"]
 [ext_resource type="Script" uid="uid://cqrrqrvgack2" path="res://scenes/gameplay/Gameplay.gd" id="2_hhfdu"]
 [ext_resource type="PackedScene" uid="uid://cfqkp86vugmtj" path="res://scenes/gameplay/Player.tscn" id="3_1l7o1"]
 [ext_resource type="Texture2D" uid="uid://tthf0rklom7" path="res://assets/graphics/reloj de tiempo.png" id="4_ytj2m"]
+[ext_resource type="Texture2D" uid="uid://dwyureolffooo" path="res://assets/graphics/barra contadora de caritas.png" id="5_73nc4"]
 [ext_resource type="Texture2D" uid="uid://2u8qtgtcp31o" path="res://assets/graphics/boton blanco.png" id="5_jfjcr"]
+[ext_resource type="Texture2D" uid="uid://c3lfv0j6ryvhe" path="res://assets/graphics/circulos blancos laterales caritas.png" id="7_nf2y2"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("2_hhfdu")
@@ -20,6 +22,15 @@ offset_bottom = 980.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_e2rtc")
+
+[node name="Ostaculos guia" type="TextureRect" parent="TextureRectFondo"]
+layout_mode = 0
+offset_left = 975.0
+offset_top = 676.0
+offset_right = 2975.0
+offset_bottom = 2188.0
+scale = Vector2(0.576175, 0.424086)
+texture = ExtResource("7_nf2y2")
 
 [node name="Player" parent="." instance=ExtResource("3_1l7o1")]
 position = Vector2(530, 317)
@@ -59,91 +70,100 @@ offset_bottom = 3062.0
 texture = ExtResource("4_ytj2m")
 
 [node name="LabelTiempo" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 2
-offset_left = 3592.91
-offset_top = 449.114
-offset_right = 8365.91
-offset_bottom = 2429.11
-text = "Tiempo: 03:00"
+layout_mode = 0
+offset_left = 4246.0
+offset_top = 122.0
+offset_right = 15678.0
+offset_bottom = 2735.0
 
 [node name="LabelPuntaje" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 2
-offset_left = 42135.0
-offset_top = 775.742
-offset_right = 45728.0
-offset_bottom = 2411.74
-text = "Puntaje: 0"
+layout_mode = 0
+offset_left = 32989.4
+offset_top = 122.485
+offset_right = 44421.4
+offset_bottom = 2735.49
+
+[node name="TextureRectIconoBarra" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 0
+offset_left = 44421.4
+offset_top = 449.113
+offset_right = 46421.4
+offset_bottom = 1961.11
+scale = Vector2(1.24193, 1.24193)
+texture = ExtResource("5_73nc4")
 
 [node name="Node2DLateralIzquierdo" type="Node2D" parent="."]
+visible = false
 
 [node name="CirculoBlancoL1" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(64, 78.2381)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(81.331, 117.338)
+scale = Vector2(-0.0919064, -0.0734484)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL2" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(64, 174.238)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(81.9685, 195.534)
+scale = Vector2(-0.0978959, -0.0734485)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL3" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(64, 262.238)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(81.303, 270.224)
+scale = Vector2(-0.0998924, -0.0716878)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL4" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(64, 350.238)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(81.317, 346.662)
+scale = Vector2(-0.0972304, -0.0752091)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL5" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(64, 438.238)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(81.7156, 423.743)
+scale = Vector2(-0.0963653, -0.071952)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL6" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(62, 528.238)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(80.8053, 496)
+scale = Vector2(-0.0979758, -0.0730171)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL7" type="Sprite2D" parent="Node2DLateralIzquierdo"]
-position = Vector2(64, 600)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(80.1532, 573.001)
+scale = Vector2(-0.100154, -0.074574)
 texture = ExtResource("5_jfjcr")
 
 [node name="Node2DLateralDerecho" type="Node2D" parent="."]
+visible = false
 
 [node name="CirculoBlancoL1" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 80)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1067.72, 120.826)
+scale = Vector2(-0.0990881, -0.0738861)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL2" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 160)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1066.07, 192)
+scale = Vector2(-0.0990884, -0.0744326)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL3" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 256)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1066.48, 269.934)
+scale = Vector2(-0.0970223, -0.0711531)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL4" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 344)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1066.96, 345.503)
+scale = Vector2(-0.103108, -0.0747805)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL5" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 432)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1067.38, 420.995)
+scale = Vector2(-0.102732, -0.0727929)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL6" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 528)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1065.88, 497.127)
+scale = Vector2(-0.099727, -0.0742836)
 texture = ExtResource("5_jfjcr")
 
 [node name="CirculoBlancoL7" type="Sprite2D" parent="Node2DLateralDerecho"]
-position = Vector2(1088, 600)
-scale = Vector2(-0.0399974, -0.0399974)
+position = Vector2(1067.38, 571.492)
+scale = Vector2(-0.101981, -0.071799)
 texture = ExtResource("5_jfjcr")

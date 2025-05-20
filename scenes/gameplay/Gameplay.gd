@@ -36,7 +36,7 @@ var screen_size: Vector2
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	texture_rect_fondo.texture = load("res://assets/graphics/fondo.png")
+	#texture_rect_fondo.texture = load("res://assets/graphics/fondo.png")
 	# texture_rect_icono_reloj.texture = load("res://assets/graphics/reloj de tiempo.png") # Si no está en editor
 
 	# Cargar texturas de obstáculos una vez
@@ -53,11 +53,11 @@ func _ready():
 	for child in node_2d_lateral_izquierdo.get_children():
 		if child is Sprite2D:
 			carita_spawn_points.append(child)
-			child.texture = load("res://assets/graphics/circulos blancos laterales caritas.png") # Asegurar textura
+			child.texture = load("res://assets/graphics/boton blanco.png") # Asegurar textura
 	for child in node_2d_lateral_derecho.get_children():
 		if child is Sprite2D:
 			carita_spawn_points.append(child)
-			child.texture = load("res://assets/graphics/circulos blancos laterales caritas.png") # Asegurar textura
+			child.texture = load("res://assets/graphics/boton blanco.png") # Asegurar textura
 
 	print("Puntos de aparición de caritas encontrados: ", carita_spawn_points.size())
 

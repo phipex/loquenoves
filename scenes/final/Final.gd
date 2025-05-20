@@ -18,6 +18,10 @@ extends Control
 @onready var timer_mensajes: Timer = $TimerMensajes
 # @onready var animation_player: AnimationPlayer = $AnimationPlayer # Si tienes animaciones
 
+var w_izq: Shortcut = preload("res://W-izq.tres")
+var p_centro: Shortcut = preload("res://P-centro.tres")
+var siete_der: Shortcut = preload("res://7-der.tres")
+
 # Preload de texturas para los mensajes de resultado
 var tex_mmm_no_acertaste = preload("res://assets/graphics/mmm parece que no acertaste.png")
 var tex_como_estabas_tan = preload("res://assets/graphics/como estabas tan.png")
@@ -43,9 +47,16 @@ func _ready():
 
 	# Conectar señales
 	button_menos.pressed.connect(_on_button_menos_pressed)
+	button_menos.shortcut = w_izq
+	
 	button_mas.pressed.connect(_on_button_mas_pressed)
+	button_mas.shortcut = siete_der
+	
 	button_continuar_quiz.pressed.connect(_on_button_continuar_quiz_pressed)
+	button_continuar_quiz.shortcut = p_centro
+	
 	button_reiniciar.pressed.connect(_on_button_reiniciar_pressed)
+	button_reiniciar.shortcut = p_centro
 	timer_mensajes.timeout.connect(_on_timer_mensajes_timeout)
 
 	update_caritas_reportadas_display()
