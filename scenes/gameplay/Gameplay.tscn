@@ -62,19 +62,20 @@ offset_right = 46055.0
 offset_bottom = 4833.0
 scale = Vector2(0.0244927, 0.0244927)
 
-[node name="TextureRectIconoReloj" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 2
-offset_left = 82.0
-offset_right = 3960.0
-offset_bottom = 3062.0
-texture = ExtResource("4_ytj2m")
-
 [node name="LabelTiempo" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
 layout_mode = 0
 offset_left = 4246.0
 offset_top = 122.0
 offset_right = 15678.0
 offset_bottom = 2735.0
+text = "fdfdfddf"
+
+[node name="TextureRectIconoReloj" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 2
+offset_left = 82.0
+offset_right = 3960.0
+offset_bottom = 3062.0
+texture = ExtResource("4_ytj2m")
 
 [node name="LabelPuntaje" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
 layout_mode = 0
