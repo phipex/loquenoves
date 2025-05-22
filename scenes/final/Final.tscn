@@ -31,6 +31,7 @@ offset_bottom = 95.0
 scale = Vector2(1, 6.84)
 
 [node name="PanelPregunta" type="Control" parent="VBoxContainerPrincipal"]
+visible = false
 anchors_preset = 0
 offset_top = -3.0
 offset_right = 1155.0
@@ -47,24 +48,20 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("3_n66j5")
 
-[node name="TextureRectBarraConteo" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta"]
-layout_mode = 2
-offset_right = 1155.0
-offset_bottom = 96.0
-
 [node name="HBoxConteoNumeros" type="Control" parent="VBoxContainerPrincipal/PanelPregunta"]
 layout_mode = 2
 anchors_preset = 0
+offset_top = 3.0
 offset_right = 1155.0
-offset_bottom = 96.0
+offset_bottom = 98.0
 
 [node name="ButtonMenos" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta/HBoxConteoNumeros"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 30.924
-offset_right = 2251.0
-offset_bottom = 1542.92
-scale = Vector2(0.336811, 0.0466859)
+offset_left = 250.0
+offset_top = 34.7953
+offset_right = 2250.0
+offset_bottom = 1546.79
+scale = Vector2(0.344822, 0.0397283)
 shortcut = ExtResource("4_tnuqv")
 texture_normal = ExtResource("3_4qh0i")
 
@@ -82,25 +79,18 @@ justification_flags = 0
 [node name="ButtonMas" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta/HBoxConteoNumeros"]
 layout_mode = 0
 offset_left = 277.0
-offset_top = 40.8655
+offset_top = 37.8655
 offset_right = 2277.0
-offset_bottom = 1552.87
+offset_bottom = 1549.87
 scale = Vector2(0.31397, 0.0359762)
 shortcut = ExtResource("6_uhsug")
 texture_normal = ExtResource("4_fgjv1")
 
-[node name="LabelSigamos" type="TextureRect" parent="VBoxContainerPrincipal/PanelPregunta"]
-layout_mode = 2
-offset_left = -3.0
-offset_top = 5.04678
-offset_right = 1152.0
-offset_bottom = 101.047
-
 [node name="ButtonContinuarQuiz" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta"]
 layout_mode = 0
-offset_left = 471.0
+offset_left = 475.0
 offset_top = 77.5614
-offset_right = 2471.0
+offset_right = 2475.0
 offset_bottom = 1589.56
 scale = Vector2(0.11224, 0.0110989)
 shortcut = ExtResource("8_yixgo")
@@ -131,6 +121,7 @@ scale = Vector2(0.580592, 0.0650514)
 texture = ExtResource("8_1nxq7")
 
 [node name="TextureRectMensajeResultado3" type="TextureRect" parent="VBoxContainerPrincipal/PanelResultado"]
+visible = false
 layout_mode = 2
 offset_left = 37.0
 offset_top = -0.877193
@@ -140,6 +131,7 @@ scale = Vector2(0.545574, 0.0628505)
 texture = ExtResource("9_wauwu")
 
 [node name="ButtonReiniciar" type="TextureButton" parent="VBoxContainerPrincipal/PanelResultado"]
+visible = false
 layout_mode = 2
 offset_left = 439.0
 offset_top = 71.7836
@@ -149,5 +141,6 @@ scale = Vector2(0.0986976, 0.012109)
 texture_normal = ExtResource("6_vul3y")
 
 [node name="TimerMensajes" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

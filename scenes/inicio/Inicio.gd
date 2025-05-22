@@ -16,6 +16,8 @@ extends Control
 @onready var timer_conteo: Timer = $TimerConteo
 @onready var animation_player: AnimationPlayer = $AnimationPlayer # Para animaciones de titileo
 
+@onready var tituloMano: AnimatedSprite2D = $PanelTitulo/AnimatedSprite2DTituloManoDer
+
 var countdown_value: int = 3
 var current_tutorial_panel: Control # Para saber qué panel está activo
 
@@ -44,8 +46,8 @@ func _ready():
 	timer_conteo.timeout.connect(_on_timer_conteo_timeout)
 
 	# Iniciar animación de titileo del título (si la tienes)
-	if animation_player.has_animation("titileo_titulo"):
-		animation_player.play("titileo_titulo")
+#	if animation_player.has_animation("titileo_titulo"):
+#		animation_player.play("titileo_titulo")
 
 	# Asignar texturas si no se hizo en el editor (ejemplo)
 	# $PanelTitulo/TextureRectTitulo.texture = textura_titulo

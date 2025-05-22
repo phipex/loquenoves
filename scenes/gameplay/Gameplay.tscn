@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://byp6vrivog6m5"]
+[gd_scene load_steps=10 format=3 uid="uid://byp6vrivog6m5"]
 
 [ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_e2rtc"]
 [ext_resource type="Script" uid="uid://cqrrqrvgack2" path="res://scenes/gameplay/Gameplay.gd" id="2_hhfdu"]
@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dwyureolffooo" path="res://assets/graphics/barra contadora de caritas.png" id="5_73nc4"]
 [ext_resource type="Texture2D" uid="uid://2u8qtgtcp31o" path="res://assets/graphics/boton blanco.png" id="5_jfjcr"]
 [ext_resource type="Texture2D" uid="uid://c3lfv0j6ryvhe" path="res://assets/graphics/circulos blancos laterales caritas.png" id="7_nf2y2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nf2y2"]
+font_size = 2008
+
+[sub_resource type="LabelSettings" id="LabelSettings_hpjv0"]
+font_size = 2000
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("2_hhfdu")
@@ -32,6 +38,52 @@ offset_bottom = 2188.0
 scale = Vector2(0.576175, 0.424086)
 texture = ExtResource("7_nf2y2")
 
+[node name="CanvasLayerUI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainerInfo" type="Control" parent="CanvasLayerUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -3.0
+offset_right = 46055.0
+offset_bottom = 4833.0
+scale = Vector2(0.0244927, 0.0244927)
+
+[node name="LabelTiempo" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 0
+offset_left = 4246.0
+offset_top = 122.0
+offset_right = 15678.0
+offset_bottom = 2735.0
+scale = Vector2(0.98609, 1.03631)
+text = "fdfdfddf"
+label_settings = SubResource("LabelSettings_nf2y2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRectIconoReloj" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 2
+offset_left = 82.0
+offset_right = 3960.0
+offset_bottom = 3062.0
+texture = ExtResource("4_ytj2m")
+
+[node name="LabelPuntaje" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 0
+offset_left = 32989.4
+offset_top = 122.485
+offset_right = 44421.4
+offset_bottom = 2735.49
+label_settings = SubResource("LabelSettings_hpjv0")
+
+[node name="TextureRectIconoBarra" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
+layout_mode = 0
+offset_left = 44421.4
+offset_top = 449.113
+offset_right = 46421.4
+offset_bottom = 1961.11
+scale = Vector2(1.24193, 1.24193)
+texture = ExtResource("5_73nc4")
+
 [node name="Player" parent="." instance=ExtResource("3_1l7o1")]
 position = Vector2(530, 317)
 
@@ -51,47 +103,6 @@ autostart = true
 wait_time = 180.0
 one_shot = true
 autostart = true
-
-[node name="CanvasLayerUI" type="CanvasLayer" parent="."]
-
-[node name="HBoxContainerInfo" type="Control" parent="CanvasLayerUI"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = -3.0
-offset_right = 46055.0
-offset_bottom = 4833.0
-scale = Vector2(0.0244927, 0.0244927)
-
-[node name="LabelTiempo" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 0
-offset_left = 4246.0
-offset_top = 122.0
-offset_right = 15678.0
-offset_bottom = 2735.0
-text = "fdfdfddf"
-
-[node name="TextureRectIconoReloj" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 2
-offset_left = 82.0
-offset_right = 3960.0
-offset_bottom = 3062.0
-texture = ExtResource("4_ytj2m")
-
-[node name="LabelPuntaje" type="Label" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 0
-offset_left = 32989.4
-offset_top = 122.485
-offset_right = 44421.4
-offset_bottom = 2735.49
-
-[node name="TextureRectIconoBarra" type="TextureRect" parent="CanvasLayerUI/HBoxContainerInfo"]
-layout_mode = 0
-offset_left = 44421.4
-offset_top = 449.113
-offset_right = 46421.4
-offset_bottom = 1961.11
-scale = Vector2(1.24193, 1.24193)
-texture = ExtResource("5_73nc4")
 
 [node name="Node2DLateralIzquierdo" type="Node2D" parent="."]
 visible = false

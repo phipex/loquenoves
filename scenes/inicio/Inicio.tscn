@@ -1,42 +1,20 @@
-[gd_scene load_steps=18 format=3 uid="uid://drib62ut2dw31"]
+[gd_scene load_steps=16 format=3 uid="uid://drib62ut2dw31"]
 
 [ext_resource type="Texture2D" uid="uid://cnao8e7ie3yjj" path="res://assets/graphics/fondo.png" id="1_lfkr5"]
 [ext_resource type="Script" uid="uid://btoa68goe3v3o" path="res://scenes/inicio/Inicio.gd" id="1_qbkfo"]
-[ext_resource type="Texture2D" uid="uid://c8mnv2lknxue5" path="res://assets/graphics/inicio y reinicio del juego primera pagina.png" id="2_qas3a"]
 [ext_resource type="Texture2D" uid="uid://cl44vft647qaw" path="res://assets/graphics/texto inicio del juego titila.png" id="3_ea6f7"]
 [ext_resource type="Shortcut" uid="uid://ba1mejdgr0o6x" path="res://P-centro.tres" id="4_yq3cq"]
 [ext_resource type="Texture2D" uid="uid://de6omiiq7in7v" path="res://assets/graphics/vamos a jugar.png" id="5_q6its"]
+[ext_resource type="Texture2D" uid="uid://ciob8wqff7ggt" path="res://assets/graphics/primera pagina sin fondo.png" id="5_sif4j"]
 [ext_resource type="Texture2D" uid="uid://dyfyt0imdif24" path="res://assets/graphics/flecha derecha.png" id="6_btuh2"]
+[ext_resource type="SpriteFrames" uid="uid://b4qsb0xlfnjtl" path="res://mano.tres" id="6_sif4j"]
 [ext_resource type="Shortcut" uid="uid://dph1lh28dwcah" path="res://7-der.tres" id="7_1dh67"]
 [ext_resource type="Texture2D" uid="uid://dhkb5kxslp3fn" path="res://assets/graphics/usa la flecha.png" id="7_1gr4y"]
-[ext_resource type="Texture2D" uid="uid://bwv0vsbmov2vu" path="res://assets/graphics/mano presionando.png" id="8_qah25"]
 [ext_resource type="Texture2D" uid="uid://s4rn7ubrodhm" path="res://assets/graphics/usa las flecha.png" id="8_rwlf0"]
 [ext_resource type="Texture2D" uid="uid://tgcy3qtd3qe2" path="res://assets/graphics/flecha izquierda.png" id="9_d17nt"]
 [ext_resource type="Texture2D" uid="uid://1ghi1di6511c" path="res://assets/graphics/el juego empezara.png" id="10_pjmwy"]
 [ext_resource type="Texture2D" uid="uid://c1e00w7cbeyhm" path="res://assets/graphics/conteo 3.png" id="11_qah25"]
 [ext_resource type="Shortcut" uid="uid://bfiw12hjqgm4c" path="res://W-izq.tres" id="12_sif4j"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sif4j"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pjmwy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_qah25")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_qah25")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Inicio" type="Control"]
 layout_mode = 3
@@ -52,10 +30,11 @@ texture = ExtResource("1_lfkr5")
 [node name="PanelTitulo" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 165.0
-offset_right = 2165.0
-offset_bottom = 1512.0
-scale = Vector2(0.426033, 0.426033)
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 4053.0
+offset_bottom = 3022.0
+scale = Vector2(0.284127, 0.213806)
 
 [node name="TextureRectTitulo" type="TextureRect" parent="PanelTitulo"]
 layout_mode = 2
@@ -64,8 +43,16 @@ texture = ExtResource("3_ea6f7")
 [node name="ButtonEmpezar" type="TextureButton" parent="PanelTitulo"]
 layout_mode = 2
 shortcut = ExtResource("4_yq3cq")
-texture_normal = ExtResource("2_qas3a")
+texture_normal = ExtResource("5_sif4j")
 stretch_mode = 0
+
+[node name="AnimatedSprite2DTituloManoDer" type="AnimatedSprite2D" parent="PanelTitulo"]
+position = Vector2(1868.88, 2202.93)
+scale = Vector2(1.37194, 1.78501)
+sprite_frames = ExtResource("6_sif4j")
+autoplay = "default"
+frame_progress = 0.506524
+speed_scale = 3.0
 
 [node name="PanelTutorialPag2" type="Control" parent="."]
 anchors_preset = 0
@@ -93,6 +80,14 @@ size_flags_stretch_ratio = 0.0
 shortcut = ExtResource("7_1dh67")
 texture_normal = ExtResource("6_btuh2")
 
+[node name="AnimatedSprite2DTituloManoDer" type="AnimatedSprite2D" parent="PanelTutorialPag2"]
+position = Vector2(617, 423)
+scale = Vector2(0.746616, 0.99319)
+sprite_frames = ExtResource("6_sif4j")
+autoplay = "default"
+frame_progress = 0.0802462
+speed_scale = 3.0
+
 [node name="PanelTutorialPag3" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -106,21 +101,22 @@ offset_right = 2692.0
 offset_bottom = 1512.0
 texture = ExtResource("7_1gr4y")
 
-[node name="AnimatedSprite2DManoDer" type="AnimatedSprite2D" parent="PanelTutorialPag3"]
-position = Vector2(924.477, 903.571)
-scale = Vector2(0.332376, 0.332376)
-sprite_frames = SubResource("SpriteFrames_sif4j")
-frame_progress = 0.48436
-
 [node name="ButtonContinuarPag3" type="TextureButton" parent="PanelTutorialPag3"]
 layout_mode = 2
-offset_left = 576.056
-offset_top = 713.101
-offset_right = 2576.05
-offset_bottom = 2225.1
+offset_left = 573.733
+offset_top = 717.747
+offset_right = 2573.73
+offset_bottom = 2229.75
 scale = Vector2(0.71727, 0.609717)
 shortcut = ExtResource("7_1dh67")
 texture_normal = ExtResource("6_btuh2")
+
+[node name="AnimatedSprite2DPag3ManoDer" type="AnimatedSprite2D" parent="PanelTutorialPag3"]
+position = Vector2(1389.04, 996.483)
+sprite_frames = ExtResource("6_sif4j")
+autoplay = "default"
+frame_progress = 0.203198
+speed_scale = 3.0
 
 [node name="PanelTutorialPag4" type="Control" parent="."]
 visible = false
@@ -130,12 +126,6 @@ offset_top = -3.0
 offset_right = 2151.0
 offset_bottom = 1509.0
 scale = Vector2(0.431024, 0.431024)
-
-[node name="AnimatedSprite2DManoIzq" type="AnimatedSprite2D" parent="PanelTutorialPag4"]
-position = Vector2(510.412, 823.62)
-scale = Vector2(0.332376, 0.332376)
-sprite_frames = SubResource("SpriteFrames_pjmwy")
-frame_progress = 0.514381
 
 [node name="TextureRectTextoPag4" type="TextureRect" parent="PanelTutorialPag4"]
 layout_mode = 2
@@ -153,6 +143,13 @@ offset_bottom = 2201.06
 scale = Vector2(0.686927, 0.571132)
 shortcut = ExtResource("12_sif4j")
 texture_normal = ExtResource("9_d17nt")
+
+[node name="AnimatedSprite2DPag4ManoIzq" type="AnimatedSprite2D" parent="PanelTutorialPag4"]
+position = Vector2(577.694, 988.344)
+sprite_frames = ExtResource("6_sif4j")
+autoplay = "default"
+frame_progress = 0.301307
+speed_scale = 3.0
 
 [node name="PanelCuentaRegresiva" type="Control" parent="."]
 visible = false
@@ -179,5 +176,3 @@ offset_bottom = 1512.0
 texture = ExtResource("11_qah25")
 
 [node name="TimerConteo" type="Timer" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

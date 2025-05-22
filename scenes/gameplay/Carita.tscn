@@ -5,7 +5,7 @@
 
 [node name="Carita" type="Sprite2D"]
 position = Vector2(7.62939e-06, 0)
-scale = Vector2(0.0671366, 0.078915)
+scale = Vector2(0.0587043, 0.0690034)
 texture = ExtResource("1_rgga8")
 script = ExtResource("2_1kbxk")
 

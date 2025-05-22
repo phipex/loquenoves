@@ -75,6 +75,11 @@ func _ready():
 	# timer_caritas.start()
 	# timer_juego.start() # Este debería tener Autostart y OneShot
 
+	label_puntaje.add_theme_color_override("font_color", Color.WHITE)
+	label_tiempo.add_theme_color_override("font_color", Color.WHITE)
+	label_tiempo.set("custom_minimum_size", Vector2(200, 40))
+	label_puntaje.set("custom_minimum_size", Vector2(200, 40))
+
 	update_ui()
 
 
