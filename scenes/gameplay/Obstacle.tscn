@@ -10,16 +10,16 @@ size = Vector2(437, 65)
 script = ExtResource("2_lpkct")
 
 [node name="Sprite2DBarra" type="Sprite2D" parent="."]
-position = Vector2(6, 27)
+position = Vector2(2, 1)
 scale = Vector2(0.289021, 0.289021)
 texture = ExtResource("1_glkbq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-15.5, 20.5)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lpkct")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-12, 23.5349)
+position = Vector2(9.53674e-07, -1)
 scale = Vector2(21.9, 3.24651)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

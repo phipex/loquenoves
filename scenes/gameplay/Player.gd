@@ -18,6 +18,7 @@ func _ready():
 	# global_position.y = screen_size.y / 2 
 	# (PDF Pag 9: "la bolita cae hasta la mitad de la pantalla")
 
+
 func _physics_process(delta: float):
 	var direction: float = 0.0
 	if Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_W): # "ui_left" está mapeado a la flecha izquierda por defecto
@@ -31,6 +32,7 @@ func _physics_process(delta: float):
 	# Mantener al jugador dentro de los límites horizontales de la pantalla
 	var sprite_width_scaled = sprite_2d_bolita.get_rect().size.x * sprite_2d_bolita.scale.x
 	global_position.x = clamp(global_position.x, sprite_width_scaled / 2.0, screen_size.x - sprite_width_scaled / 2.0)
+
 
 func die():
 	print("Player.gd: El jugador ha colisionado y debe morir.")

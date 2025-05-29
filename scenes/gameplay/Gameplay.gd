@@ -35,20 +35,20 @@ var loaded_obstacle_textures: Array[Texture2D] = []
 var screen_size: Vector2
 
 func _ready():
-	
+
+	# Configuración inicial de Timers (los valores de wait_time también se pueden poner en el editor)
+	timer_obstaculos.wait_time = 2.0 # PDF Pag 10 sugiere después de 8s para las barras, ajustar
+	timer_caritas.wait_time = randf_range(6.0, 10.0) # PDF Pag 10 "empiezan a aparecer las caritas aleatoriamente"
+
 		# Conectar señales de los Timers (o hacerlo en el editor)
 	timer_obstaculos.timeout.connect(_on_timer_obstaculos_timeout)
 	timer_caritas.timeout.connect(_on_timer_caritas_timeout)
 	timer_juego.timeout.connect(_on_timer_juego_timeout)
 
-	# Configuración inicial de Timers (los valores de wait_time también se pueden poner en el editor)
-	timer_obstaculos.wait_time = 0.0 # PDF Pag 10 sugiere después de 8s para las barras, ajustar
-	timer_caritas.wait_time = randf_range(6.0, 10.0) # PDF Pag 10 "empiezan a aparecer las caritas aleatoriamente"
-
 	# Iniciar timers si no tienen Autostart
-	# timer_obstaculos.start()
-	# timer_caritas.start()
-	# timer_juego.start() # Este debería tener Autostart y OneShot
+	timer_obstaculos.start()
+	timer_caritas.start()
+	timer_juego.start() # Este debería tener Autostart y OneShot
 
 	label_puntaje.add_theme_color_override("font_color", Color.WHITE)
 	label_tiempo.add_theme_color_override("font_color", Color.WHITE)
@@ -56,7 +56,6 @@ func _ready():
 	label_puntaje.set("custom_minimum_size", Vector2(200, 40))
 
 	update_ui()
-	
 	
 	screen_size = get_viewport_rect().size
 	#texture_rect_fondo.texture = load("res://assets/graphics/fondo.png")
@@ -91,6 +90,7 @@ func _physics_process(delta: float):
 	update_ui() # Actualizar tiempo restante en cada frame
 
 func _on_timer_obstaculos_timeout():
+
 	if loaded_obstacle_textures.is_empty():
 		print("No hay texturas de obstáculos cargadas.")
 		return
@@ -112,7 +112,7 @@ func _on_timer_obstaculos_timeout():
 	# Asumamos que aparecen desde abajo en una posición X aleatoria.
 	var obstacle_width = random_texture.get_width() * obstacle_sprite.scale.x
 	new_obstacle.global_position.x = randf_range(obstacle_width / 2.0, screen_size.x - obstacle_width / 2.0)
-	new_obstacle.global_position.y = screen_size.y + random_texture.get_height() # Empezar justo debajo
+	new_obstacle.global_position.y = screen_size.y + 100 #random_texture.get_height() # Empezar justo debajo
 
 	node_obstaculos.add_child(new_obstacle)
 

@@ -25,9 +25,11 @@ func _ready():
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
 	# queue_free() es un método incorporado que elimina el nodo de la escena.
 
+
 func _physics_process(delta: float):
 	# Mover el obstáculo hacia arriba (disminuyendo su coordenada Y)
 	global_position.y -= speed * delta
+
 
 # Este método se llamará cuando otro cuerpo (con CollisionShape) entre en este Area2D.
 func _on_body_entered(body: Node2D):
