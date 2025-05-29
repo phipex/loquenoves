@@ -101,7 +101,7 @@ func show_next_result_message():
 	button_reiniciar.visible = false
 
 	var should_continue_to_next_message: bool = true
-	var delay_for_next: float = 4.0 # PDF Páginas 15-19: "espera 3 segundos"
+	var delay_for_next: float = 5.0 # PDF Páginas 15-19: "espera 3 segundos"
 
 	if is_correct_answer:
 		match current_message_step:

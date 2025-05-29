@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dyfyt0imdif24" path="res://assets/graphics/flecha derecha.png" id="4_fgjv1"]
 [ext_resource type="Shortcut" uid="uid://bfiw12hjqgm4c" path="res://W-izq.tres" id="4_tnuqv"]
 [ext_resource type="Shortcut" uid="uid://dph1lh28dwcah" path="res://7-der.tres" id="6_uhsug"]
-[ext_resource type="Texture2D" uid="uid://2u8qtgtcp31o" path="res://assets/graphics/boton blanco.png" id="6_vul3y"]
 [ext_resource type="Texture2D" uid="uid://blwhwrrn4is7v" path="res://assets/graphics/mmm parece que no acertaste.png" id="7_rb6lc"]
 [ext_resource type="Texture2D" uid="uid://ctxvrqpwntxmn" path="res://assets/graphics/como estabas tan.png" id="8_1nxq7"]
 [ext_resource type="Shortcut" uid="uid://ba1mejdgr0o6x" path="res://P-centro.tres" id="8_yixgo"]
+[ext_resource type="Texture2D" uid="uid://c6ho00vonvw5p" path="res://assets/graphics/boton magenta.png" id="9_rhkgn"]
 [ext_resource type="Texture2D" uid="uid://vtooc2pk7raa" path="res://assets/graphics/esto que acabas de.png" id="9_wauwu"]
 
 [node name="Final" type="Control"]
@@ -88,13 +88,13 @@ texture_normal = ExtResource("4_fgjv1")
 
 [node name="ButtonContinuarQuiz" type="TextureButton" parent="VBoxContainerPrincipal/PanelPregunta"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 77.5614
-offset_right = 2475.0
-offset_bottom = 1589.56
-scale = Vector2(0.11224, 0.0110989)
+offset_left = 473.0
+offset_top = 76.9766
+offset_right = 2473.0
+offset_bottom = 1588.98
+scale = Vector2(0.114696, 0.0123794)
 shortcut = ExtResource("8_yixgo")
-texture_normal = ExtResource("6_vul3y")
+texture_normal = ExtResource("9_rhkgn")
 
 [node name="PanelResultado" type="Control" parent="VBoxContainerPrincipal"]
 visible = false
@@ -131,14 +131,13 @@ scale = Vector2(0.545574, 0.0628505)
 texture = ExtResource("9_wauwu")
 
 [node name="ButtonReiniciar" type="TextureButton" parent="VBoxContainerPrincipal/PanelResultado"]
-visible = false
 layout_mode = 2
 offset_left = 439.0
 offset_top = 71.7836
 offset_right = 2439.0
 offset_bottom = 1583.78
 scale = Vector2(0.0986976, 0.012109)
-texture_normal = ExtResource("6_vul3y")
+texture_normal = ExtResource("9_rhkgn")
 
 [node name="TimerMensajes" type="Timer" parent="."]
 wait_time = 3.0

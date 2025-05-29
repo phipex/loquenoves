@@ -81,8 +81,8 @@ shortcut = ExtResource("7_1dh67")
 texture_normal = ExtResource("6_btuh2")
 
 [node name="AnimatedSprite2DTituloManoDer" type="AnimatedSprite2D" parent="PanelTutorialPag2"]
-position = Vector2(617, 423)
-scale = Vector2(0.746616, 0.99319)
+position = Vector2(620, 459)
+scale = Vector2(0.50736, 0.674919)
 sprite_frames = ExtResource("6_sif4j")
 autoplay = "default"
 frame_progress = 0.0802462

@@ -35,6 +35,29 @@ var loaded_obstacle_textures: Array[Texture2D] = []
 var screen_size: Vector2
 
 func _ready():
+	
+		# Conectar señales de los Timers (o hacerlo en el editor)
+	timer_obstaculos.timeout.connect(_on_timer_obstaculos_timeout)
+	timer_caritas.timeout.connect(_on_timer_caritas_timeout)
+	timer_juego.timeout.connect(_on_timer_juego_timeout)
+
+	# Configuración inicial de Timers (los valores de wait_time también se pueden poner en el editor)
+	timer_obstaculos.wait_time = 0.0 # PDF Pag 10 sugiere después de 8s para las barras, ajustar
+	timer_caritas.wait_time = randf_range(6.0, 10.0) # PDF Pag 10 "empiezan a aparecer las caritas aleatoriamente"
+
+	# Iniciar timers si no tienen Autostart
+	# timer_obstaculos.start()
+	# timer_caritas.start()
+	# timer_juego.start() # Este debería tener Autostart y OneShot
+
+	label_puntaje.add_theme_color_override("font_color", Color.WHITE)
+	label_tiempo.add_theme_color_override("font_color", Color.WHITE)
+	label_tiempo.set("custom_minimum_size", Vector2(200, 40))
+	label_puntaje.set("custom_minimum_size", Vector2(200, 40))
+
+	update_ui()
+	
+	
 	screen_size = get_viewport_rect().size
 	#texture_rect_fondo.texture = load("res://assets/graphics/fondo.png")
 	# texture_rect_icono_reloj.texture = load("res://assets/graphics/reloj de tiempo.png") # Si no está en editor
@@ -61,26 +84,7 @@ func _ready():
 
 	print("Puntos de aparición de caritas encontrados: ", carita_spawn_points.size())
 
-	# Conectar señales de los Timers (o hacerlo en el editor)
-	timer_obstaculos.timeout.connect(_on_timer_obstaculos_timeout)
-	timer_caritas.timeout.connect(_on_timer_caritas_timeout)
-	timer_juego.timeout.connect(_on_timer_juego_timeout)
 
-	# Configuración inicial de Timers (los valores de wait_time también se pueden poner en el editor)
-	timer_obstaculos.wait_time = 2.5 # PDF Pag 10 sugiere después de 8s para las barras, ajustar
-	timer_caritas.wait_time = randf_range(6.0, 10.0) # PDF Pag 10 "empiezan a aparecer las caritas aleatoriamente"
-
-	# Iniciar timers si no tienen Autostart
-	# timer_obstaculos.start()
-	# timer_caritas.start()
-	# timer_juego.start() # Este debería tener Autostart y OneShot
-
-	label_puntaje.add_theme_color_override("font_color", Color.WHITE)
-	label_tiempo.add_theme_color_override("font_color", Color.WHITE)
-	label_tiempo.set("custom_minimum_size", Vector2(200, 40))
-	label_puntaje.set("custom_minimum_size", Vector2(200, 40))
-
-	update_ui()
 
 
 func _physics_process(delta: float):
@@ -112,13 +116,13 @@ func _on_timer_obstaculos_timeout():
 
 	node_obstaculos.add_child(new_obstacle)
 
-	# El script del obstáculo ya maneja la colisión con el jugador.
+	# Reiniciar temporizador con un intervalo aleatorio
+	timer_obstaculos.wait_time = randf_range(1.5, 3.5) # Ajustar frecuencia
+	
+		# El script del obstáculo ya maneja la colisión con el jugador.
 	# Incrementar puntaje (simplificado: por cada obstáculo generado)
 	GameManager.increment_score()
 	# update_ui() # Se llama en _physics_process
-
-	# Reiniciar temporizador con un intervalo aleatorio
-	timer_obstaculos.wait_time = randf_range(1.5, 3.5) # Ajustar frecuencia
 
 
 func _on_timer_caritas_timeout():
@@ -174,7 +178,7 @@ func _on_timer_juego_timeout():
 func update_ui():
 	label_puntaje.text = "Puntaje: %d" % GameManager.score # PDF Pag 11
 
-	var remaining_time: float = timer_juego.time_left
+	var remaining_time: float = 180 - timer_juego.time_left
 	var minutes: int = int(remaining_time / 60)
 	var seconds: int = int(remaining_time) % 60
 	label_tiempo.text = "Tiempo: %02d:%02d" % [minutes, seconds] # PDF Pag 9, 11, 12
